@@ -10,6 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         backgroundColor: Colors.black45,
         appBar: AppBar(
@@ -52,61 +53,94 @@ class MyApp extends StatelessWidget {
                 height: 280,
                 width: 300,
                 child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: const [
                     Padding(
-                      padding: EdgeInsets.all(16),
+                      padding: EdgeInsets.symmetric(horizontal: 15),
                       child: Card(
                         child: ListTile(
                           leading: Icon(
                             Icons.person,
                             color: Colors.redAccent,
-                            size: 40,
+                            size: 30,
                           ),
                           title: Text(
                             'Jeff',
                             style: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.w800),
+                              fontSize: 18,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black54,
+                            ),
                           ),
                         ),
                       ),
                     ),
                     Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                      padding: EdgeInsets.symmetric(horizontal: 15),
                       child: Card(
                         child: ListTile(
                           leading: Icon(
                             Icons.phone,
                             color: Colors.redAccent,
-                            size: 40,
+                            size: 30,
                           ),
                           title: Text(
-                            '911',
+                            '+91-6565119087',
                             style: TextStyle(
-                                fontSize: 24, fontWeight: FontWeight.w800),
+                              fontSize: 18,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black54,
+                            ),
                           ),
                         ),
                       ),
                     ),
                     Padding(
-                      padding:
-                          EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+                      padding: EdgeInsets.symmetric(horizontal: 15),
                       child: Card(
                         child: ListTile(
                           leading: Icon(
                             Icons.mail,
                             color: Colors.redAccent,
-                            size: 40,
+                            size: 30,
                           ),
                           title: Text(
                             'jeff@xyz.flutter',
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.w800),
+                              fontSize: 18,
+                              fontFamily: 'Poppins',
+                              fontWeight: FontWeight.w600,
+                              color: Colors.black54,
+                            ),
                           ),
                         ),
                       ),
                     ),
                   ],
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 10),
+                child: FloatingActionButton.extended(
+                  backgroundColor: Colors.redAccent,
+                  icon: const Icon(
+                    Icons.person_outline_outlined,
+                    color: Colors.white,
+                  ),
+                  onPressed: () {
+                    print("Working");
+                  },
+                  label: const Text(
+                    "About",
+                    style: TextStyle(
+                      fontSize: 18,
+                      fontFamily: 'Poppins',
+                      fontWeight: FontWeight.w400,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
               ),
             ],
